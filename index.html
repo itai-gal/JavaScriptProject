@@ -1,14 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="he">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>אפליקצית ניהול משימות</title>
+    <title>ניהול משימות</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="Task.js" defer></script>
 </head>
 
 <body>
+    <header>
+        <h1>ניהול משימות</h1>
+    </header>
 
+    <div class="main">
+        <div class="task-input">
+            <input type="text" id="taskText" placeholder="הזן תיאור משימה">
+            <input type="date" id="taskDate">
+            <button id="addTaskBtn">הוסף משימה</button>
+        </div>
+
+        <div class="filters">
+            <button data-filter="all">הכל</button>
+            <button data-filter="active">לביצוע</button>
+            <button data-filter="completed">הושלמו</button>
+        </div>
+
+        <div class="sort">
+            <button id="sortBtn">מיין לפי תאריך יעד</button>
+        </div>
+
+        <ul id="taskList"></ul>
+    </div>
 </body>
 
 </html>
