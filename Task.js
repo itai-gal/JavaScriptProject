@@ -14,8 +14,9 @@ function getTasks() {
     return stored ? JSON.parse(stored) : [];
 }
 
-function saveTasks(tasks) {
-    localStorage.setItem("tasks", JSON.stringify(tasks));
+function saveTasks(tasksToSave) {
+    localStorage.setItem("tasks", JSON.stringify(tasksToSave));
+    tasks = tasksToSave;
 }
 
 // רינדור
@@ -63,23 +64,32 @@ function addTask() {
 }
 
 // סינון
-function filterTasks(tasks, filter) {
+function filterTasks(tasksToFilter, filter) {
     switch (filter) {
         case "completed":
-            return tasks.filter(t => t.completed);
+            return tasksToFilter.filter(t => t.completed);
         case "active":
-            return tasks.filter(t => !t.completed);
+            return tasksToFilter.filter(t => !t.completed);
         default:
-            return tasks;
+            return tasksToFilter;
     }
 }
 
-//  מיון
 function sortTasks() {
-    tasks.sort((a, b) => new Date(a.dueDate || Infinity) - new Date(b.dueDate || Infinity));
-    saveTasks(tasks);
+    console.log(tasks);
+    const newTasks = [...tasks].sort((a, b) => {
+        const dateA = a.dueDate ? new Date(a.dueDate) : null;
+        const dateB = b.dueDate ? new Date(b.dueDate) : null;
+        if (!dateA && !dateB) return 0;         // אין לשניהם תאריך
+        if (!dateA) return 1;                   // ל-a אין תאריך → b קודם
+        if (!dateB) return -1;                  // ל-b אין תאריך → a קודם
+        return dateA - dateB;                   // לשניהם יש תאריך → השוואה רגילה
+    });
+    console.log(newTasks);
+    saveTasks(newTasks);
     renderTasks();
 }
+
 
 //  טעינה ראשונית של המשימות
 async function fetchInitialTasks() {
