@@ -1,0 +1,32 @@
+# ניהול משימות - אפליקציית ווב
+👉 https://github.com/itai-gal/JavaScriptProject.git
+
+אפליקציית ניהול משימות פשוטה עם ממשק נוח ותמיכה ברספונסיביות. האפליקציה מאפשרת:
+- הוספת משימות עם תאריך יעד.
+- סימון משימות כהושלמו.
+- מחיקת משימות.
+- סינון לפי סטטוס (לביצוע, הושלמו, הכל).
+- מיון לפי תאריך יעד.
+- שמירה ב-LocalStorage כך שהמשימות נשמרות בין טעינות.
+- טעינת משימות ראשוניות מ-API חיצוני במקרה ואין משימות קיימות.
+
+---
+
+## טכנולוגיות
+
+- HTML
+- CSS (כולל media queries לרספונסיביות)
+- JavaScript (וניהול LocalStorage)
+- Google Fonts - Heebo
+- API חיצוני (JSONPlaceholder)
+
+---
+
+## קבצים עיקריים
+
+
+
+├── index.html # מבנה הדף הראשי
+├── style.css # עיצוב מלא כולל רספונסיביות
+├── script.js # לוגיקת ניהול המשימות
+└── README.md # תיעוד הפרויקט
