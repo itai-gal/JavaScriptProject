@@ -1,5 +1,5 @@
 # ניהול משימות - אפליקציית ווב
-👉 https://github.com/itai-gal/JavaScriptProject.git
+👉 [Click here to view the website](https://itai-gal.github.io/JavaScriptProject/)
 
 אפליקציית ניהול משימות פשוטה עם ממשק נוח ותמיכה ברספונסיביות. האפליקציה מאפשרת:
 - הוספת משימות עם תאריך יעד.
